@@ -10,53 +10,56 @@
       href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"/>
     <title>Catcademy</title>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- Navbar -->
     <!-- this is so we can make it responsive -->
-    <nav>
-      <div>
-        <a href="#">Catcademy</a>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <div class="container">
+        <a href="#" class="navbar-brand">Catcademy</a>
 
         <button
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navmenu"
+          class="navbar-toggler"
         >
-          <span></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div id="navmenu">
-          <ul>
-            <li>
-              <a href="#learn">Learning Journey</a>
+        <div id="navmenu" class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav text-right">
+            <li class="nav-item">
+              <a href="#learn" class="nav-link">Learning Journey</a>
             </li>
-            <li>
-              <a href="#questions">Nyaa?</a>
+            <li class="nav-item">
+              <a href="#questions" class="nav-link">Nyaa?</a>
             </li>
-            <li>
-              <a href="#instructors">Instructors</a>
+            <li class="nav-item">
+              <a href="#instructors" class="nav-link">Instructors</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
+
     <!-- Showcase -->
     <section>
-      <div>
-        <div>
-          <div>
-            <h1>Become a <span> Cat </span></h1>
+      <div class="bg-dark text-light p-5">
+        <div class="d-flex justify-content-evenly align-items-center container">
+          <div class="text-center text-md-start">
+            <h1>Become a <span class="text-warning"> Cat </span></h1>
             <p>
               Nap all day cat dog hate mouse eat string barf pillow no baths
               hate everything but kitty poochy. Sleep on keyboard toy mouse
               squeak roll over.
             </p>
             <button
+              class="btn btn-primary"
               data-bs-toggle="modal"
               data-bs-target="#enroll"
             >
@@ -64,6 +67,7 @@
             </button>
           </div>
           <img
+          class="d-none d-md-block"
             src="img/sushi.png"
             alt=""
           />
@@ -72,14 +76,13 @@
     </section>
 
     <!-- Newsletter -->
-    <section >
-      <div>
-        <div>
+    <section> 
+      <div class="bg-warning text-light p-5">
+        <div class="container d-flex flex-column flex-md-row align-items-center  justify-content-between">
           <h3>Sign Up For Our Mewsletter</h3>
-
-          <div>
-            <input type="text" placeholder="Enter Email" />
-            <button type="button">Submit</button>
+          <div class="input-group" style="width: 576px; max-width: 100%;">
+            <input type="text" placeholder="Enter Email" class="form-control" aria-label="email" aria-describedby="submit-addon1">
+            <button type="button" class="btn btn-dark" id="submit-addon1">Submit</button>
           </div>
         </div>
       </div>
@@ -87,12 +90,12 @@
 
     <!-- Learn Sections -->
     <section id="learn">
-      <div>
-        <div>
-          <div>
-            <img src="img/cat.png" alt="" />
+      <div class="p-5">
+        <div class="container d-flex flex-column flex-md-row">
+          <div class="col-md-6">
+            <img src="img/cat.png" alt="" style="max-width: 100%;"/>
           </div>
-          <div>
+          <div class="col-md-6">
             <h2>Sleep 18 Hours</h2>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -113,9 +116,9 @@
     </section>
 
     <section id="learn">
-      <div>
-        <div>
-          <div>
+      <div class="bg-dark text-light p-5">
+        <div class="container d-flex flex-column flex-md-row">
+          <div class="col-md-6">
             <h2>Meow All Night</h2>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -127,12 +130,12 @@
               quae similique laboriosam iste minus placeat odit velit quos,
               nulla architecto amet voluptates?
             </p>
-            <a href="#" >
+            <a href="#" class="btn btn-light">
               <i></i> Read More
             </a>
           </div>
-          <div>
-            <img src="img/fish.png" alt="" />
+          <div class="col-md-6">
+            <img src="img/fish.png" alt=""style="max-width: 100%;"/>
           </div>
         </div>
       </div>
@@ -140,25 +143,30 @@
 
     <!-- Question Accordion -->
     <section id="questions">
-      <div>
-        <h2>Frequently Asked Questions</h2>
-        <div id="questions">
+      <div class="container pt-5 pb-5">
+        <h2 class="text-center">Frequently Asked Questions</h2>
+        <div id="questions" class="accordion accordion-flush">
           <!-- Item 1 -->
-          <div>
-            <h2>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
               <button
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#question-one"
+                aria-expanded="true"
+                aria-controls="question-one"
+                class="accordion-button"
               >
                 Where exactly are you located?
               </button>
             </h2>
             <div
               id="question-one"
+              aria-labelledby="question-one"
               data-bs-parent="#questions"
+              class="accordion-collapse collapse"
             >
-              <div>
+              <div class="accordion-body">
                 Fall asleep on the washing machine hide when guests come over
                 stare at guinea pigs yet vommit food and eat it again eat and
                 than sleep on your face. Jump five feet high and sideways when a
@@ -167,12 +175,15 @@
             </div>
           </div>
           <!-- Item 2 -->
-          <div>
-            <h2>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
               <button
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#question-two"
+                aria-expanded="true"
+                aria-controls="question-two"
+                class="accordion-button"
               >
                 What are the activities?
               </button>
@@ -180,8 +191,10 @@
             <div
               id="question-two"
               data-bs-parent="#questions"
+              class="accordion-collapse collapse"
+              aria-labelledby="question-two"
             >
-              <div>
+              <div class="accordion-body">
                 Scream at teh bath. My left donut is missing, as is my right the
                 dog smells bad and loves cheeseburgers, refuse to drink water
                 except out of someone’s glass. Flee in terror at cucumber
@@ -191,21 +204,26 @@
             </div>
           </div>
           <!-- Item 3 -->
-          <div>
-            <h2>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
               <button
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-three"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#question-three"
+              aria-expanded="true"
+              aria-controls="question-three"
+              class="accordion-button"
               >
                 What do I need to Know?
               </button>
             </h2>
             <div
-              id="question-three"
-              data-bs-parent="#questions"
+            id="question-three"
+            data-bs-parent="#questions"
+            class="accordion-collapse collapse"
+            aria-labelledby="question-three"
             >
-              <div>
+              <div class="accordion-body">
                 Be fabulous for the rest of the day – checked so poop on
                 grasses, but refuse to leave cardboard box and small kitty warm
                 kitty little balls of fur so walk on car leaving trail of paw
@@ -217,78 +235,62 @@
       </div>
     </section>
 
-    <section id="instructors">
-      <div>
-        <h2>Our Instructors</h2>
-        <p>
+    <section id="instructors" class="bg-warning p-5">
+      <div class="container text-center">
+        <h2 class="text-light">Our Instructors</h2>
+        <p class="text-light">
           Our instructors all have 5+ years pooping on grasses while licking
           paws
         </p>
-        <div>
-          <div>
-            <div>
-              <div>
-                <img src="img/kitty-1.png" alt="" />
-                <h3>Tuna</h3>
-                <p>
+        <div class="d-flex flex-column flex-md-row">
+          <div class="m-2">
+            <div class="card">
+              <div class="card-body ">
+                <img src="img/kitty-1.png" alt="" style="max-width: 100%;"/>
+                <h3 class="card-title">Tuna</h3>
+                <p class="card-text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
                 </p>
-                <a href="#"><i>twitter icon goes here</i></a>
-                <a href="#"><i>facebook icon goes here</i></a>
-                <a href="#"><i>linkedin icon goes here</i></a>
-                <a href="#"><i>instagram icon goes here</i></a>
               </div>
             </div>
           </div>
 
-          <div>
-            <div>
-              <div>
-                <img src="img/kitty-2.png" alt="" />
-                <h3>Koshka</h3>
-                <p>
+          <div class="m-2">
+            <div class="card">
+              <div class="card-body">
+                <img src="img/kitty-2.png" alt="" style="max-width: 100%;"/>
+                <h3 class="card-title">Koshka</h3>
+                <p class="card-text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
                 </p>
-                <a href="#"><i>twitter icon goes here</i></a>
-                <a href="#"><i>facebook icon goes here</i></a>
-                <a href="#"><i>linkedin icon goes here</i></a>
-                <a href="#"><i>instagram icon goes here</i></a>
               </div>
             </div>
           </div>
 
-          <div>
-            <div>
-              <div>
-                <img src="img/kitty-3.png" alt="" />
-                <h3>Meo</h3>
-                <p>
+          <div class="m-2"> 
+            <div class="card">
+              <div class="card-body">
+                <img src="img/kitty-3.png" alt="" style="max-width: 100%;"/>
+                <h3 class="card-title">Meo</h3>
+                <p class="card-text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
                 </p>
-                <a href="#"><i>twitter icon goes here</i></a>
-                <a href="#"><i>facebook icon goes here</i></a>
-                <a href="#"><i>linkedin icon goes here</i></a>
-                <a href="#"><i>instagram icon goes here</i></a>
               </div>
             </div>
           </div>
 
-          <div>
-            <div>
-              <div>
-                <img src="img/kitty-4.png" alt="" />
-                <h3>Ziggy</h3>
-                <p>
+          <div class="m-2">
+            <div class="card">
+              <div class="card-body">
+                <img src="img/kitty-4.png" alt="" style="max-width: 100%;"/>
+                <h3 class="card-title">Ziggy</h3>
+                <p class="card-text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
                 </p>
-                <a href="#"><i>twitter icon goes here</i></a>
-                <a href="#"><i>facebook icon goes here</i></a>
-                <a href="#"><i>linkedin icon goes here</i></a>
-                <a href="#"><i>instagram icon goes here</i></a>
               </div>
             </div>
           </div>
@@ -298,40 +300,41 @@
 
     <!-- Contact & Map -->
     <section>
-      <div>
-        <div>
-          <div>
-            <h2>Contact Info</h2>
-            <ul>
-              <li>
+      <div class="pt-5 pb-5">
+        <div class="container d-flex flex-column flex-md-row justify-content-between">
+          <div class="col-md-6">
+            <h2 class="text-center">Contact Info</h2>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
                 <span>Main Location:</span> Danboru
               </li>
-              <li>
+              <li class="list-group-item">
                 <span>Enrollment Phone:</span> (555) 555-5555
               </li>
-              <li>
+              <li class="list-group-item">
                 <span>Student Phone:</span> (333) 333-3333
               </li>
-              <li>
+              <li class="list-group-item">
                 <span>Enrollment Email:</span>
                 purr@rubmybelly.gg
               </li>
-              <li>
+              <li class="list-group-item">
                 <span>Student Email:</span>
                 i.dare.you2@rubmybelly.gg
               </li>
             </ul>
           </div>
-          <div>
+          <div  class="col-md-6">
             <div id="map"></div>
           </div>
         </div>
       </div>
     </section>
 
+
     <!-- Footer -->
-    <footer>
-      <div>
+    <footer class="text-center pt-5 pb-5 bg-black text-white">
+      <div class="container">
         <p>Copyright &copy; 2021 Catcademy</p>
 
         <a href="#">
@@ -341,7 +344,7 @@
     </footer>
 
     <!-- Modal -->
-    <div
+    <!-- <div
       class="modal fade"
       id="enroll"
       tabindex="-1"
@@ -394,7 +397,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <script>
       L.mapbox.accessToken =
